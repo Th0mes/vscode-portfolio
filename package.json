@@ -1,0 +1,63 @@
+{
+  "name": "code-like-google",
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "type-check": "tsc --pretty --noEmit",
+    "format": "prettier --write .",
+    "format-check": "prettier --check .",
+    "lint": "eslint . --ext ts --ext tsx --ext js",
+    "lint-css": "stylelint './src/components/**/styles.ts'",
+    "test-all": "yarn lint && yarn lint-css && yarn format-check && yarn type-check && yarn build",
+    "prepare": "husky install"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "yarn run type-check"
+    }
+  },
+  "lint-staged": {
+    "*.@(ts|tsx)": [
+      "yarn lint",
+      "yarn format"
+    ]
+  },
+  "dependencies": {
+    "next": "latest",
+    "react": "latest",
+    "react-dom": "latest",
+    "react-icons": "latest",
+    "styled-components": "latest"
+  },
+  "devDependencies": {
+    "@testing-library/react": "latest",
+    "@types/jest": "latest",
+    "@types/node": "latest",
+    "@types/react": "latest",
+    "@types/styled-components": "latest",
+    "@typescript-eslint/eslint-plugin": "latest",
+    "@typescript-eslint/parser": "latest",
+    "babel-jest": "latest",
+    "babel-plugin-styled-components": "latest",
+    "eslint": "latest",
+    "eslint-config-prettier": "latest",
+    "eslint-config-standard": "latest",
+    "eslint-plugin-import": "latest",
+    "eslint-plugin-node": "latest",
+    "eslint-plugin-prettier": "latest",
+    "eslint-plugin-promise": "latest",
+    "eslint-plugin-react": "latest",
+    "identity-obj-proxy": "latest",
+    "husky": "latest",
+    "lint-staged": "latest",
+    "prettier": "latest",
+    "stylelint": "latest",
+    "stylelint-config-standard": "latest",
+    "stylelint-config-styled-components": "latest",
+    "stylelint-processor-styled-components": "latest",
+    "typescript": "latest"
+  }
+}
